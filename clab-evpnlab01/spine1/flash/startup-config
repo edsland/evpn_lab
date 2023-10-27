@@ -1,0 +1,66 @@
+! Startup-config last modified at Fri Oct 27 00:31:52 2023 by root
+! device: spine1 (cEOSLab, EOS-4.30.3M-33434057.4303M (engineering build))
+!
+no aaa root
+!
+username admin privilege 15 role network-admin secret sha512 $6$9s5o0mAhV6zWGgt1$cykzkodGRBl9iddBQMPtFdKCrayPc0WqqZQP.u306WB0uEa//nxhYnfGSndqm5W9GMDeu9ai1fZUGzoGncog20
+!
+transceiver qsfp default-mode 4x10G
+!
+service routing protocols model multi-agent
+!
+hostname spine1
+!
+spanning-tree mode mstp
+!
+system l1
+   unsupported speed action error
+   unsupported error-correction action error
+!
+management api http-commands
+   no shutdown
+!
+management api gnmi
+   transport grpc default
+!
+management api netconf
+   transport ssh default
+!
+interface Ethernet1
+   no switchport
+   ipv6 enable
+   isis enable UNDERLAY
+   isis network point-to-point
+!
+interface Ethernet2
+   no switchport
+   ipv6 enable
+   isis enable UNDERLAY
+   isis network point-to-point
+!
+interface Loopback0
+   ipv6 address 2001:dbb::1/128
+   isis enable UNDERLAY
+   isis passive
+!
+interface Management0
+   ip address 172.20.20.7/24
+   ipv6 address 2001:172:20:20::7/64
+!
+ip routing ipv6 interfaces 
+!
+ipv6 unicast-routing
+!
+ip route 0.0.0.0/0 172.20.20.1
+!
+ipv6 route ::/0 2001:172:20:20::1
+!
+router isis UNDERLAY
+   net 49.0000.0000.0001.00
+   is-type level-2
+   log-adjacency-changes
+   advertise passive-only
+   !
+   address-family ipv6 unicast
+!
+end

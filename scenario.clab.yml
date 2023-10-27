@@ -4,6 +4,8 @@ topology:
   kinds:
     ceos:
       image: ceos:4.30.3M
+    linux:
+      image: alpine:latest
   nodes:
     spine1:
       kind: ceos
@@ -13,9 +15,15 @@ topology:
       kind: ceos
     leaf2:
       kind: ceos
+    client1:
+      kind: linux
+    client2:
+      kind: linux
 
   links:
     - endpoints: ["spine1:eth1", "leaf1:eth1"]
     - endpoints: ["spine1:eth2", "leaf2:eth1"]
     - endpoints: ["spine2:eth1", "leaf1:eth2"]
     - endpoints: ["spine2:eth2", "leaf2:eth2"]
+    - endpoints: ["leaf1:eth10", "client1:eth1"]
+    - endpoints: ["leaf2:eth10", "client2:eth1"]
