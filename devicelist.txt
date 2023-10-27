@@ -1,0 +1,6 @@
+clab-evpnlab01-client1 172.20.20.6/24
+clab-evpnlab01-client2 172.20.20.3/24
+clab-evpnlab01-leaf1 172.20.20.2/24
+clab-evpnlab01-leaf2 172.20.20.4/24
+clab-evpnlab01-spine1 172.20.20.7/24
+clab-evpnlab01-spine2 172.20.20.5/24

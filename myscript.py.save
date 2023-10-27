@@ -1,0 +1,35 @@
+import pyeapi
+
+
+def get_devices():
+    ### funtion to get list of lab routers to work with
+
+    filename = "devicelist.txt"
+
+    device_list = {}
+    spine_list = []
+    leaf_list = []
+    host_list = []
+
+
+    with open(filename) as f:
+        lines = f.readlines()
+
+        for line in lines:
+            device_role = line.split(' ')[0].split('-')[-1]
+            device_ip = line.split(' ')[1].split('/')[0]
+            if 'spine' in device_role:
+                spine_list.append(device_ip)
+            elif 'leaf' in device_role:
+                leaf_list.append(device_ip)
+            else:
+            	host_list.append(device_ip)
+        f.close()
+
+    device_list['spine'] = spine_list
+    device_list['leaf'] = leaf_list
+    device_list['host'] = host_list
+    return device_list
+
+
+print(get_devices())

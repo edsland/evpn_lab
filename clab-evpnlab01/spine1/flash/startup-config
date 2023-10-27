@@ -1,4 +1,4 @@
-! Startup-config last modified at Fri Oct 27 00:31:52 2023 by root
+! Startup-config last modified at Fri Oct 27 16:14:30 2023 by root
 ! device: spine1 (cEOSLab, EOS-4.30.3M-33434057.4303M (engineering build))
 !
 no aaa root
@@ -27,12 +27,14 @@ management api netconf
    transport ssh default
 !
 interface Ethernet1
+   mtu 9214
    no switchport
    ipv6 enable
    isis enable UNDERLAY
    isis network point-to-point
 !
 interface Ethernet2
+   mtu 9214
    no switchport
    ipv6 enable
    isis enable UNDERLAY
@@ -54,6 +56,24 @@ ipv6 unicast-routing
 ip route 0.0.0.0/0 172.20.20.1
 !
 ipv6 route ::/0 2001:172:20:20::1
+!
+router bgp 65000
+   router-id 1.1.1.1
+   no bgp default ipv4-unicast
+   distance bgp 20 200 200
+   neighbor evpn peer group
+   neighbor evpn remote-as 65000
+   neighbor evpn next-hop-self
+   neighbor evpn update-source Loopback0
+   neighbor evpn ebgp-multihop 3
+   neighbor evpn route-reflector-client
+   neighbor evpn send-community extended
+   neighbor evpn maximum-routes 12000 warning-only
+   neighbor 2001:dbb::101 peer group evpn
+   neighbor 2001:dbb::102 peer group evpn
+   !
+   address-family evpn
+      neighbor evpn activate
 !
 router isis UNDERLAY
    net 49.0000.0000.0001.00
