@@ -1,3 +1,5 @@
+cpuid 16384 0 - Live 0xffffffffc02be000
+dummy 16384 0 - Live 0xffffffffc12a4000
 xt_HL 16384 0 - Live 0xffffffffc1253000
 arptable_filter 16384 0 - Live 0xffffffffc124a000
 xt_u32 16384 0 - Live 0xffffffffc1245000

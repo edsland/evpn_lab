@@ -7,17 +7,15 @@ all:
   children:
     ceos:
       hosts:
-        clab-evpnlab01-leaf1:
-          ansible_host: 172.20.20.2
-        clab-evpnlab01-leaf2:
+        clab-evpnlab01-client1:
           ansible_host: 172.20.20.4
+        clab-evpnlab01-client2:
+          ansible_host: 172.20.20.3
+        clab-evpnlab01-leaf1:
+          ansible_host: 172.20.20.5
+        clab-evpnlab01-leaf2:
+          ansible_host: 172.20.20.6
         clab-evpnlab01-spine1:
           ansible_host: 172.20.20.7
         clab-evpnlab01-spine2:
-          ansible_host: 172.20.20.5
-    linux:
-      hosts:
-        clab-evpnlab01-client1:
-          ansible_host: 172.20.20.6
-        clab-evpnlab01-client2:
-          ansible_host: 172.20.20.3
+          ansible_host: 172.20.20.2

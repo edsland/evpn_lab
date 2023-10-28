@@ -1,4 +1,4 @@
-! Startup-config last modified at Fri Oct 27 16:14:30 2023 by root
+! Startup-config last modified at Sat Oct 28 11:29:13 2023 by root
 ! device: spine1 (cEOSLab, EOS-4.30.3M-33434057.4303M (engineering build))
 !
 no aaa root
@@ -45,6 +45,8 @@ interface Loopback0
    isis enable UNDERLAY
    isis passive
 !
+interface Loopback1
+!
 interface Management0
    ip address 172.20.20.7/24
    ipv6 address 2001:172:20:20::7/64
@@ -63,7 +65,7 @@ router bgp 65000
    distance bgp 20 200 200
    neighbor evpn peer group
    neighbor evpn remote-as 65000
-   neighbor evpn next-hop-self
+   neighbor evpn next-hop-unchanged
    neighbor evpn update-source Loopback0
    neighbor evpn ebgp-multihop 3
    neighbor evpn route-reflector-client

@@ -6,7 +6,7 @@
       "prefix": "clab",
       "mgmt": {
         "network": "clab",
-        "bridge": "br-e381a5eb9f57",
+        "bridge": "br-08294bea1ddd",
         "ipv4-subnet": "172.20.20.0/24",
         "ipv4-gw": "172.20.20.1",
         "ipv6-subnet": "2001:172:20:20::/64",
@@ -24,19 +24,19 @@
       "fqdn": "client1.evpnlab01.io",
       "group": "",
       "labdir": "/home/edwin/clab/evpn_lab/clab-evpnlab01/client1",
-      "kind": "linux",
-      "image": "alpine:latest",
+      "kind": "ceos",
+      "image": "ceos:4.30.3M",
       "mgmt-net": "",
-      "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.6",
+      "mgmt-intf": "Management0",
+      "mgmt-ipv4-address": "172.20.20.4",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "2001:172:20:20::6",
+      "mgmt-ipv6-address": "2001:172:20:20::4",
       "mgmt-ipv6-prefix-length": 64,
-      "mac-address": "",
+      "mac-address": "00:1c:73:86:e3:4b",
       "labels": {
-        "clab-mgmt-net-bridge": "br-e381a5eb9f57",
+        "clab-mgmt-net-bridge": "br-08294bea1ddd",
         "clab-node-group": "",
-        "clab-node-kind": "linux",
+        "clab-node-kind": "ceos",
         "clab-node-lab-dir": "/home/edwin/clab/evpn_lab/clab-evpnlab01/client1",
         "clab-node-name": "client1",
         "clab-node-type": "",
@@ -53,19 +53,19 @@
       "fqdn": "client2.evpnlab01.io",
       "group": "",
       "labdir": "/home/edwin/clab/evpn_lab/clab-evpnlab01/client2",
-      "kind": "linux",
-      "image": "alpine:latest",
+      "kind": "ceos",
+      "image": "ceos:4.30.3M",
       "mgmt-net": "",
-      "mgmt-intf": "",
+      "mgmt-intf": "Management0",
       "mgmt-ipv4-address": "172.20.20.3",
       "mgmt-ipv4-prefix-length": 24,
       "mgmt-ipv6-address": "2001:172:20:20::3",
       "mgmt-ipv6-prefix-length": 64,
-      "mac-address": "",
+      "mac-address": "00:1c:73:14:0d:bb",
       "labels": {
-        "clab-mgmt-net-bridge": "br-e381a5eb9f57",
+        "clab-mgmt-net-bridge": "br-08294bea1ddd",
         "clab-node-group": "",
-        "clab-node-kind": "linux",
+        "clab-node-kind": "ceos",
         "clab-node-lab-dir": "/home/edwin/clab/evpn_lab/clab-evpnlab01/client2",
         "clab-node-name": "client2",
         "clab-node-type": "",
@@ -86,13 +86,13 @@
       "image": "ceos:4.30.3M",
       "mgmt-net": "",
       "mgmt-intf": "Management0",
-      "mgmt-ipv4-address": "172.20.20.2",
+      "mgmt-ipv4-address": "172.20.20.5",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "2001:172:20:20::2",
+      "mgmt-ipv6-address": "2001:172:20:20::5",
       "mgmt-ipv6-prefix-length": 64,
-      "mac-address": "00:1c:73:e6:ab:9d",
+      "mac-address": "00:1c:73:d1:f5:61",
       "labels": {
-        "clab-mgmt-net-bridge": "br-e381a5eb9f57",
+        "clab-mgmt-net-bridge": "br-08294bea1ddd",
         "clab-node-group": "",
         "clab-node-kind": "ceos",
         "clab-node-lab-dir": "/home/edwin/clab/evpn_lab/clab-evpnlab01/leaf1",
@@ -115,13 +115,13 @@
       "image": "ceos:4.30.3M",
       "mgmt-net": "",
       "mgmt-intf": "Management0",
-      "mgmt-ipv4-address": "172.20.20.4",
+      "mgmt-ipv4-address": "172.20.20.6",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "2001:172:20:20::4",
+      "mgmt-ipv6-address": "2001:172:20:20::6",
       "mgmt-ipv6-prefix-length": 64,
-      "mac-address": "00:1c:73:69:f1:4f",
+      "mac-address": "00:1c:73:b9:ce:21",
       "labels": {
-        "clab-mgmt-net-bridge": "br-e381a5eb9f57",
+        "clab-mgmt-net-bridge": "br-08294bea1ddd",
         "clab-node-group": "",
         "clab-node-kind": "ceos",
         "clab-node-lab-dir": "/home/edwin/clab/evpn_lab/clab-evpnlab01/leaf2",
@@ -148,9 +148,9 @@
       "mgmt-ipv4-prefix-length": 24,
       "mgmt-ipv6-address": "2001:172:20:20::7",
       "mgmt-ipv6-prefix-length": 64,
-      "mac-address": "00:1c:73:6c:b6:da",
+      "mac-address": "00:1c:73:7b:a0:78",
       "labels": {
-        "clab-mgmt-net-bridge": "br-e381a5eb9f57",
+        "clab-mgmt-net-bridge": "br-08294bea1ddd",
         "clab-node-group": "",
         "clab-node-kind": "ceos",
         "clab-node-lab-dir": "/home/edwin/clab/evpn_lab/clab-evpnlab01/spine1",
@@ -173,13 +173,13 @@
       "image": "ceos:4.30.3M",
       "mgmt-net": "",
       "mgmt-intf": "Management0",
-      "mgmt-ipv4-address": "172.20.20.5",
+      "mgmt-ipv4-address": "172.20.20.2",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "2001:172:20:20::5",
+      "mgmt-ipv6-address": "2001:172:20:20::2",
       "mgmt-ipv6-prefix-length": 64,
-      "mac-address": "00:1c:73:e5:85:ef",
+      "mac-address": "00:1c:73:7d:c5:fd",
       "labels": {
-        "clab-mgmt-net-bridge": "br-e381a5eb9f57",
+        "clab-mgmt-net-bridge": "br-08294bea1ddd",
         "clab-node-group": "",
         "clab-node-kind": "ceos",
         "clab-node-lab-dir": "/home/edwin/clab/evpn_lab/clab-evpnlab01/spine2",
@@ -197,13 +197,13 @@
       "a": {
         "node": "spine1",
         "interface": "eth1",
-        "mac": "aa:c1:ab:44:a5:cd",
+        "mac": "aa:c1:ab:30:18:f5",
         "peer": "z"
       },
       "z": {
         "node": "leaf1",
         "interface": "eth1",
-        "mac": "aa:c1:ab:ed:9e:ff",
+        "mac": "aa:c1:ab:7e:4b:b2",
         "peer": "a"
       }
     },
@@ -211,13 +211,13 @@
       "a": {
         "node": "spine1",
         "interface": "eth2",
-        "mac": "aa:c1:ab:02:ad:9b",
+        "mac": "aa:c1:ab:ea:c6:ba",
         "peer": "z"
       },
       "z": {
         "node": "leaf2",
         "interface": "eth1",
-        "mac": "aa:c1:ab:b3:52:e5",
+        "mac": "aa:c1:ab:95:dd:09",
         "peer": "a"
       }
     },
@@ -225,13 +225,13 @@
       "a": {
         "node": "spine2",
         "interface": "eth1",
-        "mac": "aa:c1:ab:a5:51:e5",
+        "mac": "aa:c1:ab:c3:32:01",
         "peer": "z"
       },
       "z": {
         "node": "leaf1",
         "interface": "eth2",
-        "mac": "aa:c1:ab:9f:ad:5d",
+        "mac": "aa:c1:ab:ef:dc:9d",
         "peer": "a"
       }
     },
@@ -239,13 +239,13 @@
       "a": {
         "node": "spine2",
         "interface": "eth2",
-        "mac": "aa:c1:ab:7d:0c:16",
+        "mac": "aa:c1:ab:65:49:aa",
         "peer": "z"
       },
       "z": {
         "node": "leaf2",
         "interface": "eth2",
-        "mac": "aa:c1:ab:4f:00:73",
+        "mac": "aa:c1:ab:98:e7:89",
         "peer": "a"
       }
     },
@@ -253,13 +253,13 @@
       "a": {
         "node": "leaf1",
         "interface": "eth10",
-        "mac": "aa:c1:ab:c0:7c:77",
+        "mac": "aa:c1:ab:8d:df:15",
         "peer": "z"
       },
       "z": {
         "node": "client1",
         "interface": "eth1",
-        "mac": "aa:c1:ab:87:2a:69",
+        "mac": "aa:c1:ab:47:41:b0",
         "peer": "a"
       }
     },
@@ -267,13 +267,13 @@
       "a": {
         "node": "leaf2",
         "interface": "eth10",
-        "mac": "aa:c1:ab:64:1b:80",
+        "mac": "aa:c1:ab:d4:f7:93",
         "peer": "z"
       },
       "z": {
         "node": "client2",
         "interface": "eth1",
-        "mac": "aa:c1:ab:b1:32:e1",
+        "mac": "aa:c1:ab:2a:ff:68",
         "peer": "a"
       }
     }

@@ -1,3 +1,5 @@
+cpuid 16384 0 - Live 0xffffffffc02be000
+dummy 16384 0 - Live 0xffffffffc12a4000
 xt_HL 16384 0 - Live 0xffffffffc1253000
 arptable_filter 16384 0 - Live 0xffffffffc124a000
 xt_u32 16384 0 - Live 0xffffffffc1245000
@@ -137,7 +139,7 @@ drm 622592 4 i915,ttm,drm_kms_helper, Live 0xffffffffc03f5000
 aesni_intel 376832 0 - Live 0xffffffffc04be000
 i2c_i801 36864 0 - Live 0xffffffffc035b000
 crypto_simd 16384 1 aesni_intel, Live 0xffffffffc0356000
-ahci 45056 3 - Live 0xffffffffc037e000
+ahci 45056 4 - Live 0xffffffffc037e000
 cryptd 24576 2 ghash_clmulni_intel,crypto_simd, Live 0xffffffffc02d2000
 hid_generic 16384 0 - Live 0xffffffffc0291000
 lpc_ich 28672 0 - Live 0xffffffffc03d7000

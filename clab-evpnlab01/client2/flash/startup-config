@@ -1,0 +1,57 @@
+! Startup-config last modified at Sat Oct 28 10:59:49 2023 by root
+! device: client2 (cEOSLab, EOS-4.30.3M-33434057.4303M (engineering build))
+!
+no aaa root
+!
+username admin privilege 15 role network-admin secret sha512 $6$2opo6Ee.oUt/fenl$p98VUj8z995ufmnYRvIE.2DhtRmR/1/zc/cdDWVnPLj218Chx2UNr91btqKSwWTy0tZITqQM3mXNyo5OBlmTO0
+!
+transceiver qsfp default-mode 4x10G
+!
+service routing protocols model multi-agent
+!
+hostname client2
+!
+spanning-tree mode mstp
+no spanning-tree vlan-id 100,200,300
+!
+system l1
+   unsupported speed action error
+   unsupported error-correction action error
+!
+vlan 100
+   name CORP_NET
+!
+vlan 200
+   name GUEST_NET
+!
+management api http-commands
+   no shutdown
+!
+management api gnmi
+   transport grpc default
+!
+management api netconf
+   transport ssh default
+!
+interface Ethernet1
+   switchport trunk allowed vlan 100,200,300
+   switchport mode trunk
+!
+interface Management0
+   ip address 172.20.20.3/24
+   ipv6 address 2001:172:20:20::3/64
+!
+interface Vlan100
+   ip address 192.168.100.20/24
+!
+interface Vlan200
+   ip address 192.168.200.20/24
+   ipv6 address 2001:beef:200::20/64
+!
+no ip routing
+!
+ip route 0.0.0.0/0 172.20.20.1
+!
+ipv6 route ::/0 2001:172:20:20::1
+!
+end
