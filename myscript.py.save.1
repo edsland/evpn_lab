@@ -9,11 +9,14 @@ with open('clab-evpnlab01/ansible-inventory.yml', 'r') as file:
 
 ans_dev_list = ansible_host_file['all']['children']['ceos']['hosts']
 
+dev_mstring = ''
+
 for i in ans_dev_list:
 	hostname = i.split('-')[-1]
-	ip = ans_dev_list[i]
+	ip = ans_dev_list[i]['ansible_host']
 	print(hostname)
-	print(ip)
+	print(ip90-p;.)
+
 
 pyeapi.load_config('eapi.conf')
 
