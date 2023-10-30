@@ -1,19 +1,6 @@
 import pyeapi
 from pprint import pprint as pp
 from prettytable import PrettyTable
-import yaml
-
-
-with open('clab-evpnlab01/ansible-inventory.yml', 'r') as file:
-     ansible_host_file = yaml.safe_load(file)
-
-ans_dev_list = ansible_host_file['all']['children']['ceos']['hosts']
-
-for i in ans_dev_list:
-	hostname = i.split('-')[-1]
-	ip = ans_dev_list[i]
-	print(hostname)
-	print(ip)
 
 pyeapi.load_config('eapi.conf')
 
@@ -41,8 +28,9 @@ def display_inventory(devices):
         x.add_row([hostname, role, model, version])
     
     print(x)
-    #print (dir(switch.connection))
 
+def main():
+    display_inventory(allswitches)
 
-#display_inventory(allswitches)
-
+if __name__=="__main__":
+    main()
