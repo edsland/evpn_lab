@@ -1,2 +1,2 @@
 # evpn_lab
-Testing Container Lab VXLAN/EVPN setup
+Testing Container with Arista EOS VXLAN/EVPN Lab.
